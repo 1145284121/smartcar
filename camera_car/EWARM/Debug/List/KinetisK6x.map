@@ -1,0 +1,411 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  29/Oct/2018  23:20:45
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Exe\KinetisK6x.out
+#    Map file     =  
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\List\KinetisK6x.map
+#    Command line =  
+#        -f C:\Users\lenovo\AppData\Local\Temp\EW6406.tmp
+#        (C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\Attitude_Calculation.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\BMX055.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\Camera.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\DataStore.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\direction.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\DisPlayDeviceDriver.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\FXAS2100.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\FXOS8700.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\ImageSensorDriver.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\isr.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\KeyBoardDriver.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\LSM9DS0.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\main.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\MK60_ADC.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\MK60_DMA.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\MK60_flash.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\MK60_FTM.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\MK60_GPIO.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\MK60_PIT.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\MK60_Systick.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\MK60_uart.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\MMA8451.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\Motor.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\MPU3050.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\ProjectMath.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\SCCB.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\SoftIIC.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\StartupC_K6X.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\StartupS_K6X.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\Steer.o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj\UI.o
+#        --no_out_extension -o
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Exe\KinetisK6x.out
+#        --redirect _Printf=_PrintfLargeNoMb --redirect _Scanf=_ScanfLargeNoMb
+#        --map
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\List\KinetisK6x.map
+#        --config
+#        C:\Users\lenovo\Desktop\code\camera_car\EWARM\Config\Kinetis_K60DN512K.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x0 { ro section .intvec };
+"A1":  place at 0x410 { ro section .noinit };
+define block CodeRelocate { section .textrw_init };
+"P1":  place in [from 0x0 to 0x8'0000] { ro, block CodeRelocate };
+define block CodeRelocateRam { section .textrw };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x1fff'0410 to 0x2001'0000] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+initialize manually with packing = copy, complex ranges { section .data };
+initialize manually with packing = copy, complex ranges { section .textrw };
+
+  Section              Kind         Address    Size  Object
+  -------              ----         -------    ----  ------
+"A0":                                         0x410
+  .intvec              const            0x0   0x410  StartupC_K6X.o [1]
+                                    - 0x410   0x410
+
+"A1":                                          0x38
+  .noinit              ro code        0x410    0x38  StartupS_K6X.o [1]
+                                    - 0x448    0x38
+
+"P1":                                        0x2b74
+  .text                ro code        0x448   0xc2e  xprintflarge_nomb.o [2]
+  .text                ro code       0x1076    0x3a  zero_init3.o [4]
+  .text                ro code       0x10b0    0x16  strchr.o [4]
+  .text                ro code       0x10c8    0x40  xfail_s.o [2]
+  .text                ro code       0x1108    0x36  strlen.o [4]
+  .text                ro code       0x1140    0x58  memchr.o [4]
+  .text                ro code       0x1198   0x230  I64DivMod.o [4]
+  .text                ro code       0x13c8   0x1a2  DblMul.o [3]
+  .text                ro code       0x156c    0xa6  ABImemcpy.o [4]
+  .text                ro code       0x1614    0x70  frexp.o [3]
+  .text                ro code       0x1684    0x2e  DblCmpLe.o [3]
+  .text                ro code       0x16b4   0x246  DblDiv.o [3]
+  .text                ro code       0x18fc    0x28  DblToU32.o [3]
+  .text                ro code       0x1924    0x1a  U32ToDbl.o [3]
+  .text                ro code       0x1940    0xe2  DblSub.o [3]
+  .text                ro code       0x1a24     0x8  xlocale_c.o [2]
+  .text                ro code       0x1a2c     0x6  abort.o [2]
+  .text                ro code       0x1a34     0x2  I64DivZer.o [4]
+  .text                ro code       0x1a38   0x16a  DblAdd.o [3]
+  .text                ro code       0x1ba4    0x14  exit.o [5]
+  .text                ro code       0x1bb8   0x4d4  DisPlayDeviceDriver.o [1]
+  CodeRelocate                       0x208c   0x268  <Block>
+    Initializer bytes  const         0x208c   0x268  <for CodeRelocateRam-1>
+  .text                ro code       0x22f4   0x23c  MK60_uart.o [1]
+  .text                ro code       0x2530    0x6c  MK60_GPIO.o [1]
+  .rodata              const         0x259c   0x228  DisPlayDeviceDriver.o [1]
+  Veneer               ro code       0x27c4     0x8  - Linker created -
+  .text                ro code       0x27cc   0x194  StartupC_K6X.o [1]
+  .text                ro code       0x2960    0x7c  main.o [1]
+  .text                ro code       0x29dc    0xb4  MK60_PIT.o [1]
+  Veneer               ro code       0x2a90     0x8  - Linker created -
+  Veneer               ro code       0x2a98     0x8  - Linker created -
+  Veneer               ro code       0x2aa0     0x8  - Linker created -
+  Veneer               ro code       0x2aa8     0x8  - Linker created -
+  Veneer               ro code       0x2ab0     0x8  - Linker created -
+  Veneer               ro code       0x2ab8     0x8  - Linker created -
+  .text                ro code       0x2ac0   0x108  SoftIIC.o [1]
+  .text                ro code       0x2bc8   0x15c  BMX055.o [1]
+  .text                ro code       0x2d24    0x28  printf.o [2]
+  .text                ro code       0x2d4c    0x24  S32ToFlt.o [3]
+  .text                ro code       0x2d70    0xd8  FltMul.o [3]
+  .text                ro code       0x2e48    0x22  FltToU32.o [3]
+  .data_init                         0x2e6c    0xa8  <Block>
+    Initializer bytes  const         0x2e6c    0xa8  <for .data-1>
+  .text                ro code       0x2f14    0x28  data_init.o [4]
+  .iar.init_table      const         0x2f3c    0x10  - Linker created -
+  .text                ro code       0x2f4c    0x1e  cmain.o [4]
+  .text                ro code       0x2f6a     0x4  low_level_init.o [2]
+  .text                ro code       0x2f6e     0x4  exit.o [2]
+  .text                ro code       0x2f74     0xa  cexit.o [4]
+  .text                ro code       0x2f7e    0x16  xprout.o [2]
+  .text                ro code       0x2f94     0xc  putchar.o [2]
+  .rodata              const         0x2fa0     0xc  main.o [1]
+  .text                ro code       0x2fac     0xc  cstartup_M.o [4]
+  .rodata              const         0x2fb8     0x4  xlocale_c.o [2]
+  .rodata              const         0x2fbc     0x0  zero_init3.o [4]
+                                   - 0x2fbc  0x2b74
+
+"P2", part 1 of 2:                            0x310
+  CodeRelocateRam               0x1fff'0410   0x268  <Block>
+    CodeRelocateRam-1           0x1fff'0410   0x268  <Init block>
+      .textrw          inited   0x1fff'0410   0x220  SoftIIC.o [1]
+      .textrw          inited   0x1fff'0630    0x48  StartupC_K6X.o [1]
+  .data                         0x1fff'0678    0xa8  <Block>
+    .data-1                     0x1fff'0678    0xa8  <Init block>
+      .data            inited   0x1fff'0678    0x14  MK60_GPIO.o [1]
+      .data            inited   0x1fff'068c    0x14  MK60_uart.o [1]
+      .data            inited   0x1fff'06a0    0x38  xlocale_c.o [2]
+      .data            inited   0x1fff'06d8    0x48  xfiles.o [2]
+                              - 0x1fff'0720   0x310
+
+"P2", part 2 of 2:                             0x64
+  .bss                          0x1fff'0720    0x64  <Block>
+    .bss               zero     0x1fff'0720     0xc  StartupC_K6X.o [1]
+    .bss               zero     0x1fff'072c     0x4  xfail_s.o [2]
+    .bss               zero     0x1fff'0730    0x50  xfiles.o [2]
+    .bss               zero     0x1fff'0780     0x1  main.o [1]
+                              - 0x1fff'0784    0x64
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x2fbc     0x8'0000  0x7'd045
+  0x1fff'0784  0x2001'0000  0x1'f87d
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x61:
+          0x1fff'0720  0x61
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  rw code  ro data  rw data
+    ------                 -------  -------  -------  -------
+command line/config:
+    ---------------------------------------------------------
+    Total:
+
+C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj: [1]
+    BMX055.o                   348
+    DisPlayDeviceDriver.o    1 236               552
+    MK60_GPIO.o                108                20       20
+    MK60_PIT.o                 180
+    MK60_uart.o                572                20       20
+    SoftIIC.o                  264      544      544
+    StartupC_K6X.o             404       72    1 112       12
+    StartupS_K6X.o              56
+    main.o                     124                12        1
+    ---------------------------------------------------------
+    Total:                   3 292      616    2 260       53
+
+dl7M_tlf.a: [2]
+    abort.o                      6
+    exit.o                       4
+    low_level_init.o             4
+    printf.o                    40
+    putchar.o                   12
+    xfail_s.o                   64                          4
+    xfiles.o                                      72      152
+    xlocale_c.o                  8                60       56
+    xprintflarge_nomb.o      3 118
+    xprout.o                    22
+    ---------------------------------------------------------
+    Total:                   3 278               132      212
+
+m7M_tl.a: [3]
+    DblAdd.o                   362
+    DblCmpLe.o                  46
+    DblDiv.o                   582
+    DblMul.o                   418
+    DblSub.o                   226
+    DblToU32.o                  40
+    FltMul.o                   216
+    FltToU32.o                  34
+    S32ToFlt.o                  36
+    U32ToDbl.o                  26
+    frexp.o                    112
+    ---------------------------------------------------------
+    Total:                   2 098
+
+rt7M_tl.a: [4]
+    ABImemcpy.o                166
+    I64DivMod.o                560
+    I64DivZer.o                  2
+    cexit.o                     10
+    cmain.o                     30
+    cstartup_M.o                12
+    data_init.o                 40
+    memchr.o                    88
+    strchr.o                    22
+    strlen.o                    54
+    zero_init3.o                58
+    ---------------------------------------------------------
+    Total:                   1 042
+
+shb_l.a: [5]
+    exit.o                      20
+    ---------------------------------------------------------
+    Total:                      20
+
+    Gaps                        24
+    Linker created              56                16
+-------------------------------------------------------------
+    Grand Total:             9 810      616    2 408      265
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.bss$$Base              0x1fff'0720          --   Gb  - Linker created -
+.bss$$Limit             0x1fff'0784          --   Gb  - Linker created -
+.data$$Base             0x1fff'0678          --   Gb  - Linker created -
+.data$$Limit            0x1fff'0720          --   Gb  - Linker created -
+.data_init$$Base             0x2e6c          --   Gb  - Linker created -
+.data_init$$Limit            0x2f14          --   Gb  - Linker created -
+.iar.init_table$$Base        0x2f3c          --   Gb  - Linker created -
+.iar.init_table$$Limit       0x2f4c          --   Gb  - Linker created -
+?main                        0x2f4d         Code  Gb  cmain.o [4]
+BMX055_init                  0x2bc9  0x158  Code  Gb  BMX055.o [1]
+CodeRelocate$$Base           0x208c          --   Gb  - Linker created -
+CodeRelocate$$Limit          0x22f4          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1fff'0410          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1fff'0678          --   Gb  - Linker created -
+ErrLoop                 0x1fff'0780    0x1  Data  Gb  main.o [1]
+F6x8                         0x259c  0x228  Data  Gb  DisPlayDeviceDriver.o [1]
+IIC_DELAY               0x1fff'0411   0x1e  Code  Gb  SoftIIC.o [1]
+IIC_Read_Reg                 0x2b11   0x66  Code  Gb  SoftIIC.o [1]
+IIC_Write_Reg                0x2ac1   0x50  Code  Gb  SoftIIC.o [1]
+IIC_init                     0x2b77   0x3c  Code  Gb  SoftIIC.o [1]
+IIC_noack               0x1fff'052f   0x3e  Code  Gb  SoftIIC.o [1]
+IIC_readbyte            0x1fff'05b7   0x6a  Code  Gb  SoftIIC.o [1]
+IIC_sendbyte            0x1fff'056d   0x4a  Code  Gb  SoftIIC.o [1]
+IIC_start               0x1fff'042f   0x48  Code  Gb  SoftIIC.o [1]
+IIC_stop                0x1fff'0477   0x40  Code  Gb  SoftIIC.o [1]
+IIC_waitack             0x1fff'04b7   0x78  Code  Gb  SoftIIC.o [1]
+LoadInt                       0x5ed   0x7a  Code  Lc  xprintflarge_nomb.o [2]
+NVIC_SystemReset             0x2961   0x18  Code  Lc  main.o [1]
+OLED_CLS                     0x1cff    0xa  Code  Gb  DisPlayDeviceDriver.o [1]
+OLED_Delay                   0x1bb9   0x1e  Code  Lc  DisPlayDeviceDriver.o [1]
+OLED_Fill                    0x1cbb   0x44  Code  Lc  DisPlayDeviceDriver.o [1]
+OLED_PrintChar               0x1e21   0x60  Code  Gb  DisPlayDeviceDriver.o [1]
+OLED_PrintInt                0x1e81  0x1e8  Code  Gb  DisPlayDeviceDriver.o [1]
+OLED_Set_Pos                 0x1c8b   0x30  Code  Lc  DisPlayDeviceDriver.o [1]
+OLED_WriteCmd                0x1c3d   0x4e  Code  Lc  DisPlayDeviceDriver.o [1]
+OLED_WriteData               0x1bd9   0x62  Code  Lc  DisPlayDeviceDriver.o [1]
+OLED_init                    0x1d09  0x118  Code  Gb  DisPlayDeviceDriver.o [1]
+PIT_delay                    0x29dd   0xa4  Code  Gb  MK60_PIT.o [1]
+PORTX                   0x1fff'0678   0x14  Data  Lc  MK60_GPIO.o [1]
+PORT_init                    0x2531   0x62  Code  Gb  MK60_GPIO.o [1]
+Region$$Table$$Base          0x2f3c          --   Gb  - Linker created -
+Region$$Table$$Limit         0x2f4c          --   Gb  - Linker created -
+Reset_Handler                 0x411         Code  Gb  StartupS_K6X.o [1]
+SysClock                0x1fff'0720    0xc  Data  Gb  StartupC_K6X.o [1]
+UARTN                   0x1fff'068c   0x14  Data  Gb  MK60_uart.o [1]
+_GenldLargeNoMb               0xd95  0x24c  Code  Lc  xprintflarge_nomb.o [2]
+_LdtobLargeNoMb               0xb2f  0x23e  Code  Lc  xprintflarge_nomb.o [2]
+_LitobLargeNoMb               0x9d7  0x112  Code  Lc  xprintflarge_nomb.o [2]
+_Locale_lconv           0x1fff'06a0   0x38  Data  Lc  xlocale_c.o [2]
+_PrintfLargeNoMb              0x449  0x19e  Code  Gb  xprintflarge_nomb.o [2]
+_Prout                       0x2f7f   0x16  Code  Gb  xprout.o [2]
+_PutcharsLargeNoMb            0xfe1   0x2e  Code  Lc  xprintflarge_nomb.o [2]
+_PutfldLargeNoMb              0x667  0x264  Code  Lc  xprintflarge_nomb.o [2]
+_PuttxtLargeNoMb              0x8cb  0x10c  Code  Lc  xprintflarge_nomb.o [2]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x2000'fff8         Data  Gb  <internal module>
+__VECTOR_RAM {Abs}      0x1fff'0000         Data  Gb  <internal module>
+__VECTOR_TABLE {Abs}            0x0         Data  Gb  <internal module>
+__aeabi_cdcmple              0x1685         Code  Gb  DblCmpLe.o [3]
+__aeabi_d2uiz                0x18fd         Code  Gb  DblToU32.o [3]
+__aeabi_ddiv                 0x16b5         Code  Gb  DblDiv.o [3]
+__aeabi_dmul                 0x13c9         Code  Gb  DblMul.o [3]
+__aeabi_dsub                 0x1941         Code  Gb  DblSub.o [3]
+__aeabi_f2uiz                0x2e49         Code  Gb  FltToU32.o [3]
+__aeabi_fmul                 0x2d71         Code  Gb  FltMul.o [3]
+__aeabi_i2f                  0x2d4d         Code  Gb  S32ToFlt.o [3]
+__aeabi_ldiv0                0x1a35         Code  Gb  I64DivZer.o [4]
+__aeabi_memcpy               0x156d         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4              0x158d         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8              0x158d         Code  Gb  ABImemcpy.o [4]
+__aeabi_ui2d                 0x1925         Code  Gb  U32ToDbl.o [3]
+__aeabi_uldivmod             0x1199         Code  Gb  I64DivMod.o [4]
+__cmain                      0x2f4d         Code  Gb  cmain.o [4]
+__code_start__ {Abs}          0x410         Data  Gb  <internal module>
+__exit                       0x1ba5   0x14  Code  Gb  exit.o [5]
+__iar_Fail_s                 0x10c9   0x1c  Code  Gb  xfail_s.o [2]
+__iar_Memchr                 0x1141         Code  Gb  memchr.o [4]
+__iar_Stdout            0x1fff'06d8   0x48  Data  Gb  xfiles.o [2]
+__iar_Strchr                 0x10b1         Code  Gb  strchr.o [4]
+__iar_dadd                   0x1951         Code  Gb  DblSub.o [3]
+__iar_data_init3             0x2f15   0x28  Code  Gb  data_init.o [4]
+__iar_dsub                   0x1a39         Code  Gb  DblAdd.o [3]
+__iar_dsubStart              0x1a4b         Code  Gb  DblAdd.o [3]
+__iar_frexp                  0x1621         Code  Gb  frexp.o [3]
+__iar_frexp64                0x1615         Code  Gb  frexp.o [3]
+__iar_frexpl                 0x1621         Code  Gb  frexp.o [3]
+__iar_program_start          0x2fad         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3             0x1077   0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init             0x2f6b    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0  0x410  Data  Gb  StartupC_K6X.o [1]
+_call_main                   0x2f59         Code  Gb  cmain.o [4]
+_exit                        0x2f75         Code  Gb  cexit.o [4]
+_main                        0x2f67         Code  Gb  cmain.o [4]
+abort                        0x1a2d    0x6  Code  Gb  abort.o [2]
+default_isr                  0x27cd    0x2  Code  Gb  StartupC_K6X.o [1]
+exit                         0x2f6f    0x4  Code  Gb  exit.o [2]
+fputc                        0x250b   0x16  Code  Gb  MK60_uart.o [1]
+frexp                        0x1615         Code  Gb  frexp.o [3]
+frexpl                       0x1615         Code  Gb  frexp.o [3]
+localeconv                   0x1a25    0x4  Code  Gb  xlocale_c.o [2]
+main                         0x2979   0x50  Code  Gb  main.o [1]
+memchr                       0x1141         Code  Gb  memchr.o [4]
+obuf                    0x1fff'0730   0x50  Data  Lc  xfiles.o [2]
+printf                       0x2d25   0x28  Code  Gb  printf.o [2]
+putchar                      0x2f95    0xc  Code  Gb  putchar.o [2]
+scale                         0xae9   0x46  Code  Lc  xprintflarge_nomb.o [2]
+sec_hand                0x1fff'072c    0x4  Data  Lc  xfail_s.o [2]
+set_sys_dividers        0x1fff'0631   0x48  Code  Gb  StartupC_K6X.o [1]
+start                        0x27cf  0x136  Code  Gb  StartupC_K6X.o [1]
+strchr                       0x10b1         Code  Gb  strchr.o [4]
+strlen                       0x1109         Code  Gb  strlen.o [4]
+uart_init                    0x22f5  0x1fa  Code  Gb  MK60_uart.o [1]
+uart_putchar                 0x24ef   0x1c  Code  Gb  MK60_uart.o [1]
+write_vtor                   0x2905    0x6  Code  Gb  StartupC_K6X.o [1]
+
+
+[1] = C:\Users\lenovo\Desktop\code\camera_car\EWARM\Debug\Obj
+[2] = dl7M_tlf.a
+[3] = m7M_tl.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  9 810 bytes of readonly  code memory
+    616 bytes of readwrite code memory
+  2 408 bytes of readonly  data memory
+    265 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
